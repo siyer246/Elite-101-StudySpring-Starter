@@ -30,8 +30,10 @@ python -m unittest
 ## Team
 
 <!-- Add yourself here on your Git lesson: - Your Name (role) -->
-
+- Shrimayee (Elite 101 Student)
 - (your squad will add themselves here)
+
+
 
 ## Where to start
 
