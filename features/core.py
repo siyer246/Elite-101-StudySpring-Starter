@@ -3,7 +3,7 @@
 
 def get_cards(data):
     return data["cards"]
-
+#Returns all the cards that need to be studied.
 
 def check_answer(card, guess):
     return guess.strip().lower() == card["answer"].strip().lower()
@@ -53,3 +53,4 @@ def percent_correct(score, total):
     if total == 0:
         return 0
     return round(100 * score / total)
+
