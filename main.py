@@ -52,8 +52,10 @@ def main():
             for card in matches:
                 print("- " + card["question"])
         elif choice == "5":
+            print("The last card added was: ")
             print(core.top_card(core.get_cards(data))["question"])
         elif choice == "6":
+            print("Category breakdown:")
             print(core.count_by_category(core.get_cards(data)))
         elif choice == "7":
             print(reports.deck_summary(data))
