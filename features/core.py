@@ -11,13 +11,22 @@ def check_answer(card, guess):
 
 def run_quiz(cards, ask=input, show=print):
     score = 0
+    current_streak = 0
+    best_streak = 0
+
     for card in cards:
         guess = ask(card["question"] + " ")
+
         if check_answer(card, guess):
             show("Correct!")
             score += 1
+
+            if current_streak > best_streak:
+                best_streak = current_streak
+
         else:
             show("Not quite. The answer was: " + card["answer"])
+            current_streak = 0
     return score
 
 
