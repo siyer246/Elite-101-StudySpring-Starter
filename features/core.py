@@ -6,7 +6,7 @@ def get_cards(data):
 
 
 def check_answer(card, guess):
-    return guess.strip() == card["answer"].strip()
+    return guess.strip().lower() == card["answer"].strip().lower()
 
 
 def run_quiz(cards, ask=input, show=print):
@@ -20,6 +20,7 @@ def run_quiz(cards, ask=input, show=print):
         if check_answer(card, guess):
             show("Correct!")
             score += 1
+            current_streak += 1
 
             if current_streak > best_streak:
                 best_streak = current_streak
@@ -27,6 +28,7 @@ def run_quiz(cards, ask=input, show=print):
         else:
             show("Not quite. The answer was: " + card["answer"])
             current_streak = 0
+    show("Your best streak was: " + str(best_streak))
     return score
 
 
