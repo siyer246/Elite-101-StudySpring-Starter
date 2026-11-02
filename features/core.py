@@ -3,7 +3,7 @@
 
 def get_cards(data):
     return data["cards"]
-#Returns all the cards that need to be studied.
+
 
 def check_answer(card, guess):
     return guess.strip().lower() == card["answer"].strip().lower()
@@ -11,13 +11,24 @@ def check_answer(card, guess):
 
 def run_quiz(cards, ask=input, show=print):
     score = 0
+    current_streak = 0
+    best_streak = 0
+
     for card in cards:
         guess = ask(card["question"] + " ")
+
         if check_answer(card, guess):
             show("Correct!")
             score += 1
+            current_streak += 1
+
+            if current_streak > best_streak:
+                best_streak = current_streak
+
         else:
             show("Not quite. The answer was: " + card["answer"])
+            current_streak = 0
+    show("Your best streak was: " + str(best_streak))
     return score
 
 
@@ -53,4 +64,3 @@ def percent_correct(score, total):
     if total == 0:
         return 0
     return round(100 * score / total)
-
