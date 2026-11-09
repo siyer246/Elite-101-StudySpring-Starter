@@ -16,3 +16,11 @@ release goes first. Keep each entry to what a user would notice.
 ```
 
 <!-- Your first real release note goes below this line. -->
+'''
+## v1.0 - 2026-11-08
+### Added
+- Option for the user to keep on add new cards to their study deck, so they can continue to learn more than the first set
+### Fixed
+- It made sure the user could enter the question and corresponding answer
+### Changed
+- There was just a small error in the code.
